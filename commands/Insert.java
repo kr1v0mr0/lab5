@@ -6,6 +6,10 @@ import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 import lab5.managers.*;
 
+
+/**
+ * Команда 'insert'. добавляет новый элемент с заданным ключом
+ */
 public class Insert extends Command {
     private final CollectionManager collectionManager;
     private final Consolka consolka;

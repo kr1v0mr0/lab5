@@ -2,6 +2,9 @@ package lab5.Commands;
 
 import java.util.Objects;
 
+/**
+ * Абстрактная команда с именем и описанием
+ */
 public abstract class Command implements Executable {
     private final String name;
     private final String description;
@@ -10,11 +13,15 @@ public abstract class Command implements Executable {
         this.name = name;
         this.description = description;
     }
-
+    /**
+     * @return Название и использование команды.
+     */
     public String getName() {
         return this.name;
     }
-
+    /**
+     * @return Описание команды.
+     */
     public String getDescription() {
         return this.description;
     }

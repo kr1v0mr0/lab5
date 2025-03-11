@@ -4,7 +4,9 @@ import lab5.managers.CommandManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 
-
+/**
+ * Команда 'history'. выводит последние 8 команд (без их аргументов)
+ */
 public class History extends Command {
     private final Consolka consolka;
     private final CommandManager commandManager;

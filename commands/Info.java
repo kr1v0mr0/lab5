@@ -6,6 +6,9 @@ import lab5.tools.ExecutionResponse;
 
 import java.time.LocalDateTime;
 
+/**
+ * Команда 'info'. выводит в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
+ */
 public class Info extends Command {
     private final Consolka consolka;
     private final CollectionManager collectionManager;

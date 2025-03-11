@@ -5,6 +5,9 @@ import lab5.managers.CollectionManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 
+/**
+ * Команда 'count_less_than_genre'. выводит количество элементов, хначение поля genre которых меньше заданного
+ */
 public class CountLessThanGenre extends Command{
     private final CollectionManager collectionManager;
     private final Consolka consolka;
@@ -18,7 +21,7 @@ public class CountLessThanGenre extends Command{
         if (!arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, " всё пошло не по плану ");
         }
         var level = MusicGenre.valueOf(arguments[0]).Level();
         int p=0;

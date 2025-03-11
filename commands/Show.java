@@ -3,6 +3,9 @@ package lab5.Commands;
 import lab5.managers.CollectionManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
+/**
+ * Команда 'show'. выводит в стандартный поток вывода все элементы коллекции в строковом представлении
+ */
 public class Show extends Command {
     private final Consolka consolka;
     private final CollectionManager collectionManager;

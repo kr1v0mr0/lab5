@@ -3,7 +3,9 @@ package lab5.Commands;
 import lab5.managers.CollectionManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
-
+/**
+ * Команда 'replace_if_greater'. заменяет значение по ключу, если новое значение больше старого
+ */
 public class ReplaceIfGreater extends Command {
     private final CollectionManager collectionManager;
     private final Consolka consolka;
@@ -17,7 +19,7 @@ public class ReplaceIfGreater extends Command {
         if (!arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, " всё пошло не по плану ");
         }
         Integer cnt = -1;
         try { cnt = Integer.parseInt(arguments[1].trim()); } catch (NumberFormatException e) { return new ExecutionResponse(false, "Количество альбомов не распознано"); }

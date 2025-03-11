@@ -3,6 +3,9 @@ import lab5.tools.Consolka;
 import lab5.managers.CollectionManager;
 import lab5.tools.ExecutionResponse;
 
+/**
+ * Команда 'Save'. охраняет коллекцию в файл.
+ */
 public class Save extends Command {
     private final Consolka consolka;
     private final CollectionManager collectionManager;

@@ -3,6 +3,10 @@ package lab5.Commands;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 
+/**
+ * Команда 'execute_script'. считывает и исполняет скрипт из указанного файла.
+ * В скрипте содержатся команды в таком же виде, в котром их вводит пользователь в интерактивном режиме.
+ */
 public class ExecuteScript extends Command {
     private final Consolka consolka;
 
@@ -15,10 +19,10 @@ public class ExecuteScript extends Command {
         if (arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, "всё пошло не по плану");
         }
 
         consolka.println("Выполнение скрипта '" + arguments[1] + "'...");
-        return new ExecutionResponse(true, " ");
+        return new ExecutionResponse(true, " всё супер ");
     }
 }

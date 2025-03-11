@@ -3,6 +3,9 @@ package lab5.Commands;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 
+/**
+ * Команда 'exit'. завершает программу (без сохранения в файл)
+ */
 public class Exit extends Command {
     private final Consolka consolka;
 
@@ -19,6 +22,6 @@ public class Exit extends Command {
         }
 
         consolka.println("Завершение выполнения...");
-        return new ExecutionResponse(true, " ");
+        return new ExecutionResponse(true, "exit");
     }
 }

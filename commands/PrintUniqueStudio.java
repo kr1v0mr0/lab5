@@ -7,6 +7,9 @@ import lab5.tools.ExecutionResponse;
 
 import java.util.TreeSet;
 
+/**
+ * Команда 'print_unique_studio'. выводит уникальные значения поля studio всех элементов коллекции
+ */
 public class PrintUniqueStudio extends Command {
     private final Consolka consolka;
     private final CollectionManager collectionManager;
@@ -21,7 +24,7 @@ public class PrintUniqueStudio extends Command {
         if (!arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, " всё пошло не по плану ");
         }
         var beNull = false;
         var ts = new TreeSet<Studio>();
@@ -35,6 +38,6 @@ public class PrintUniqueStudio extends Command {
             consolka.println(" null");
         for (var e : ts)
             consolka.println(" " + e);
-        return new ExecutionResponse(true, " ");
+        return new ExecutionResponse(true, "всё супер");
     }
 }

@@ -4,6 +4,9 @@ import lab5.managers.CollectionManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
 
+/**
+ * Команда 'RemoveKey'.  удаляет элемент из коллекции по его ключу
+ */
 public class RemoveKey extends Command{
     private final CollectionManager collectionManager;
     private final Consolka consolka;

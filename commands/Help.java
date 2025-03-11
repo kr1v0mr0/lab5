@@ -3,7 +3,9 @@ import lab5.managers.CommandManager;
 import lab5.tools.ExecutionResponse;
 
 import java.util.stream.Collectors;
-
+/**
+ * Команда 'help'. выводит справку по доступным командам.
+ */
 public class Help extends Command {
     private CommandManager commandManager;
     public Help(CommandManager commandManager){

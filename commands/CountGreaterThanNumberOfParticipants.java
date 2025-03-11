@@ -3,7 +3,9 @@ package lab5.Commands;
 import lab5.managers.CollectionManager;
 import lab5.tools.Consolka;
 import lab5.tools.ExecutionResponse;
-
+/**
+ * Команда 'count_greater_than_number_of_participants'. выводит количество элементов, значение поля numberOfParticipants которых больше заданного
+ */
 public class CountGreaterThanNumberOfParticipants extends Command{
     private final CollectionManager collectionManager;
     private final Consolka consolka;
@@ -17,7 +19,7 @@ public class CountGreaterThanNumberOfParticipants extends Command{
         if (!arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, " всё пошло не по плану ");
         }
         int p=0;
         Integer cnt = -1;
