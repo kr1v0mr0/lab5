@@ -28,6 +28,10 @@ public class DumpManager {
         this.fileName = fileName;
         this.console = console;
     }
+    /**
+     * Записывает коллекцию в файл.
+     * @param collection коллекция
+     */
     public void writeCollection(HashMap<Integer, MusicBand> collection) {
         try (PrintWriter collectionPrintWriter = new PrintWriter(new File(fileName))) {
             collectionPrintWriter.println(gson.toJson(collection));
@@ -36,6 +40,11 @@ public class DumpManager {
             console.printError("Загрузочный файл не может быть открыт!");
         }
     }
+
+    /**
+     * Считывает коллекцию из файл.
+     * @return Считанная коллекция
+     */
     public HashMap<Integer, MusicBand> readCollection() {
         if (fileName != null && !fileName.isEmpty()) {
             try (var fileReader = new FileReader(fileName)) {

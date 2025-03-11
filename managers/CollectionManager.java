@@ -17,28 +17,52 @@ public class CollectionManager {
         this.lastSaveTime = null;
         this.dumpManager = dumpManager;
     }
+    /**
+     * @return Последнее время инициализации.
+     */
     public LocalDateTime getLastInitTime() {
         return lastInitTime;
     }
+    /**
+     * @return Последнее время сохранения.
+     */
     public LocalDateTime getLastSaveTime() {
         return lastSaveTime;
     }
+
+    /**
+     * @return коллекция.
+     */
     public HashMap<Integer, MusicBand> getCollection() {
         return collection;
     }
+    /**
+     * Получить MusicBand по ID
+     */
     public MusicBand byId(int id) { return collection.get(id); }
+    /**
+     * Содержит ли колекции MusicBand
+     */
     public boolean isСontain(MusicBand e) { return e == null || byId(e.getId()) != null; }
+    /**
+     * Получить свободный ID
+     */
     public int getFreeId() {
         while (byId(++currentId) != null);
         return currentId;
     }
+    /**
+     * Добавляет MusicBand
+     */
     public boolean add(MusicBand a) {
         if (isСontain(a)) return false;
         collection.put(a.getId(), a);
         update();
         return true;
     }
-
+    /**
+     * Обновляет MusicBand
+     */
     public boolean update(MusicBand a) {
         if (!isСontain(a)) return false;
         collection.remove(byId(a.getId()));
@@ -46,6 +70,9 @@ public class CollectionManager {
         update();
         return true;
     }
+    /**
+     * Удаляет MusicBand по ID
+     */
     public boolean remove(int id) {
         var a = byId(id);
         if (a == null) return false;
@@ -53,6 +80,9 @@ public class CollectionManager {
         update();
         return true;
     }
+    /**
+     * Фиксирует изменения коллекции
+     */
     public void update() {
         List<Map.Entry<Integer, MusicBand>> list = new ArrayList<>(collection.entrySet());
 
@@ -76,6 +106,9 @@ public class CollectionManager {
         update();
         return true;
     }
+    /**
+     * Сохраняет коллекцию в файл
+     */
     public void saveCollection() {
         dumpManager.writeCollection(collection);
         lastSaveTime = LocalDateTime.now();
