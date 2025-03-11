@@ -6,6 +6,9 @@ import lab5.tools.ExecutionResponse;
 
 import java.util.Set;
 
+/**
+ * Команда 'Clear'.  очищает коллекцию
+ */
 public class Clear extends Command{
     private final Consolka consolka;
     private final CollectionManager collectionManager;
@@ -20,7 +23,7 @@ public class Clear extends Command{
         if (!arguments[1].isEmpty()) {
             consolka.println("Неправильное количество аргументов!");
             consolka.println("Использование: '" + getName() + "'");
-            return new ExecutionResponse(false, " ");
+            return new ExecutionResponse(false, " всё пошло не по плану ");
         }
         Set<Integer> keys = collectionManager.getCollection().keySet();
         //var isFirst = true;
@@ -29,6 +32,6 @@ public class Clear extends Command{
         }
         collectionManager.update();
         consolka.println("Коллекция очищена!");
-        return new ExecutionResponse(false, " ");
+        return new ExecutionResponse(true, " всё супер ");
     }
 }
