@@ -1,6 +1,8 @@
 package lab5.tools;
 import java.util.Scanner;
-
+/**
+ * Консоль для ввода команд и вывода результата
+ */
 public interface Console {
     void print(Object obj);
     void println(Object obj);

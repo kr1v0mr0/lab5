@@ -21,6 +21,9 @@ public class Runner {
         this.console = console;
         this.commandManager = commandManager;
     }
+    /**
+     * Интерактивный режим
+     */
     public void interactiveMode() {
         try {
             ExecutionResponse commandStatus;
@@ -43,6 +46,12 @@ public class Runner {
             console.printError("Непредвиденная ошибка!");
         }
     }
+
+    /**
+     * Проверяет рекурсивность выполнения скриптов.
+     * @param argument Название запускаемого скрипта
+     * @return можно ли выполнять скрипт.
+     */
     private boolean checkRecursion(String argument, Scanner scriptScanner) {
         var recStart = -1;
         var i = 0;
@@ -64,6 +73,12 @@ public class Runner {
         }
         return true;
     }
+
+    /**
+     * Режим для запуска скрипта.
+     * @param argument Аргумент скрипта
+     * @return Код завершения.
+     */
     private ExecutionResponse scriptMode(String argument) {
         String[] userCommand = {"", ""};
         StringBuilder executionOutput = new StringBuilder();
@@ -114,6 +129,12 @@ public class Runner {
         }
         return new ExecutionResponse(false,"");
     }
+
+    /**
+     * Launchs the command.
+     * @param userCommand Команда для запуска
+     * @return Код завершения.
+     */
     private ExecutionResponse launchCommand(String[] userCommand) {
         if (userCommand[0].equals("")) return new ExecutionResponse(false, "");
         var command = commandManager.getCommands().get(userCommand[0]);
